@@ -7,10 +7,10 @@ class User {
     this.body = body;
   }
 
-  login(){
+  async login(){
     const client = this.body
     // const {id,pass} = UserStorage.getUsers("id","pass");
-    const {id,pass,name} = UserStorage.getuserInfo(client.id);
+    const {id,pass,name} = await UserStorage.getuserInfo(client.id);
 console.log(id , pass , name);
     // const response = {};
     // console.log(id,pass)
@@ -31,7 +31,7 @@ console.log(id , pass , name);
   register(){
     const client = this.body;
     const response = UserStorage.save(client);
-    return response
+    return response 
   }
 }
 
