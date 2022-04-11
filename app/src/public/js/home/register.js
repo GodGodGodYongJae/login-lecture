@@ -19,7 +19,7 @@ function register(){
     pass : pass.value,
   };
 
-  console.log(req);
+
   fetch("/register",{
     method: "POST",
     headers:{
